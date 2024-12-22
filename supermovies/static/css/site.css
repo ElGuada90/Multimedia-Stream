@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Colocar el contenedor detrás del contenido */
+    background-size: cover;
+    background-color:  rgba(5, 5, 88, 1);
+    /*background-image: url('/static/images/colage2.jpg');*/
+    background-repeat: no-repeat;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(3,3,3,0.35);
+    font-family: "Audiowide", sans-serif;
+    color: white;
+    overflow: hidden;
+    padding: 8px 5px 8px 5px;
+    font-size: 15px;
+    
+}
+
+.navbar a {
+    font-family: "Audiowide", sans-serif;
+    color: white;
+    text-align: left;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navbar img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 10px;
+}
+
+.navbar-right {
+    margin-left: auto; /* Empuja los elementos hacia la derecha */
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 10px;
+    word-wrap: break-word;
+   
+}
+
+.navbar button {
+    background-color: rgba(3, 233, 250); /* Color verde */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+.navbar button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el ratón */
+    color: white;
+}
+
+.message {
+    margin: 0;
+    font-weight: 600;
+    color: blue;
+    padding: 0px;
+}
+
+
+.body-content {
+    padding: 5px;
+    font-family: "Audiowide", sans-serif;
+}
+
+
+
+/* Estilos para asegurar que el contenido no se superponga */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 400px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 25px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba (0, 0, 0, 1);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: white;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #03e9fa;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 10px 10px 35px; /* Ajusta el padding para dar espacio al icono */
+    color: white;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+}
+
+.login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    pointer-events: none;
+    transition: 0.5s;
+} 
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9fa;
+    font-size: 12px
+}
+
+.login-box .checkbox label{
+    color: white;
+    margin-left: 10px;
+}
+
+.login-box .checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9fa;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+.login-box a:hover {
+    background: #03e9fa;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9fa,
+                0 0 25px #03e9fa,
+                0 0 50px #03e9fa,
+                0 0 100px #03e9fa;
+}
+
+.login-box a span {
+    position: absolute;
+    display: block;
+} 
+
+.login-box a span:nth-child(1) {
+    top: 0;
+    left: -100;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #03e9fa, transparent);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+
+}
+
+.login-box a span:nth-child(2) {
+    top: -100;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, #03e9fa, transparent);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+
+}
+
+.login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, #03e9fa, transparent);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+
+}
+
+.login-box a span:nth-child(4) {
+    bottom: -100;
+    left: 0;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(360deg, #03e9fa, transparent);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+
+}
+
+.slider-image {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 1);
+    animation: slider 25s linear infinite;
+    z-index: 2;
+}
+
+@keyframes slider {
+    0%{background-image: url('/static/images/Poster X-Men Apocalypse slider.jpg');}
+    25%{background-image: url('/static/images/Poster Transformers Saga slider.jpg');}
+    50%{background-image: url('/static/images/Poster Justice League slider.jpg');}
+    75%{background-image: url('/static/images/Poster Avengers slider.jpg');}
+    100%{background-image: url('/static/images/Poster Matrix Resurrections slider.jpg');}
+}
+
+footer p {
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+
+/* Para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        display: flex;
+        justify-content: flex-start;
+        word-wrap: break-word;
+    }
+    
+    .navbar-right {
+        word-break: break-word; /* Quiebra el texto por palabra */
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+        overflow-wrap: break-word; /* Rompe palabras largas si es necesario */
+        text-align: right; 
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between; /* Mantiene los elementos alineados horizontalmente */
+        flex-wrap: nowrap; /* Asegura que todo permanezca en una fila */
+    }
+
+    .navbar-item {
+        font-size: 14px; /* Ajusta el tamaño de los enlaces para pantallas pequeñas */
+    }
+
+    .navbar-right {
+        font-size: 12px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        text-align: right;
+    }
+}
+
+/* Estilos específicos para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .navbar button {
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
+        padding: 8px 16px; /* Ajusta el relleno */
+        word-wrap: break-word;
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .navbar button {
+        width: 68%;
+        font-size: 12px; /* Tamaño de fuente menor para pantallas más pequeñas */
+        padding: 6px 12px;
+        word-wrap: break-word;
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+    }
+    .navbar a, img{
+        margin-left: 2px;
+    }
+  }
+
+

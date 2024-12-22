@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../static/images/icon G2.png" sizes="192x192" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="manifest" href="../static/manifest.json">
+    <link rel="stylesheet" href="../static/css/site.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('series') }}" class="navbar-brand" aria-label="Brand">
+            <img src="static/images/icon G2.png" class="navbar-logo" alt="">
+        </a>
+        <a href="{{ url_for('logout') }}" class="navbar-item">Salir</a>
+        <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
+        <button id="installButton" type="button" style="display: none;">Instalar App</button>
+        <div class="navbar-right">{{ content }}</div>
+    </div>
+
+    <div class="body-content">
+        {% block content %}
+        {% endblock %}
+        <hr>
+        <footer>
+            <p>Copyright &copy; EG90 2024</p>
+        </footer>
+    </div>
+    <script src="../static/javascripts/main.js" defer></script>
+</body>
+</html>

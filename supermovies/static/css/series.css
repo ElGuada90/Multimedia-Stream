@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgba(5, 5, 88, 1);
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Colocar el contenedor detrás del contenido */
+    background-size: cover;
+    background-color: rgba(5, 5, 88, 1);
+    /*background-image: url('/static/images/colage1.jpg');*/
+    background-repeat: no-repeat;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(3,3,3,0.35);
+    font-family: "Audiowide", sans-serif;
+    color: white;
+    overflow: hidden;
+    padding: 8px 5px 8px 5px;
+    font-size: 15px;
+    
+}
+
+.navbar a {
+    font-family: "Audiowide", sans-serif;
+    color: white;
+    text-align: left;
+    padding: 5px 5px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.navbar img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 10px;
+}
+
+.navbar-right {
+    margin-left: auto; /* Empuja los elementos hacia la derecha */
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 10px;
+    word-wrap: break-word;
+   
+}
+
+.navbar button {
+    background-color: #03e9fa; /* Color verde */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+.navbar button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el ratón */
+    color: white;
+}
+
+.message {
+    margin: 0;
+    font-weight: 600;
+    color: blue;
+    padding: 0px;
+}
+
+.body-content {
+    padding: 5px;
+    font-family: "Audiowide", sans-serif;
+}
+
+/* Estilos para asegurar que el contenido no se superponga */
+.container {
+    background-color: rgba(3,3,3,0.35);
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    border-radius: 10px;
+}
+
+.container img {
+    width: 200px;
+    height: 300px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.col-lg-3 {
+    text-align: center ;
+    padding: 5px;
+}
+
+.video-wrapper {
+    width: 100%; /* El contenedor del video ocupa el 100% del ancho */
+    display: flex;
+    justify-content: center; /* Centra el video */
+}
+
+video {
+    width: 100%; /* Asegura que el video ocupe el ancho del contenedor */
+    height: auto; /* Mantiene la proporción del video */
+    margin: 10px;
+}
+
+button {
+    margin: 10px;
+    padding: 5px; /* Padding interno para los botones */
+    border: none; /* Sin borde */
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+    border-radius: 10px;
+    font-size: 14px;
+    width: 135px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse por encima */
+}
+
+.accordion {
+    background-color:transparent;
+    border: transparent;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 25px;
+}
+
+.accordion-item {
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+.accordion-header {
+    cursor: pointer;
+    padding: 15px;
+    text-align: left;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    width: 100%;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #0056b3;
+}
+
+.accordion-content {
+    padding: 15px;
+    display: none; /* Oculta el contenido por defecto */
+    color: white;
+    background-color:transparent;
+}
+
+a {
+    color:white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+
+/* Para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        display: flex;
+        justify-content: flex-start;
+        word-wrap: break-word;
+    }
+    
+    .navbar-right {
+        word-break: break-word; /* Quiebra el texto por palabra */
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+        overflow-wrap: break-word; /* Rompe palabras largas si es necesario */
+        text-align: right; 
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between; /* Mantiene los elementos alineados horizontalmente */
+        flex-wrap: nowrap; /* Asegura que todo permanezca en una fila */
+    }
+
+    .navbar-item {
+        font-size: 14px; /* Ajusta el tamaño de los enlaces para pantallas pequeñas */
+    }
+
+    .navbar-right {
+        font-size: 12px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        text-align: right;
+    }
+}
+
+/* Estilos específicos para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .navbar button {
+        font-size: 14px; /* Ajusta el tamaño de la fuente */
+        padding: 8px 16px; /* Ajusta el relleno */
+        word-wrap: break-word;
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+    }
+    .controls {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Alinea los botones al centro */
+    }
+
+    .controls button {
+        width: 100%; /* Hace que los botones ocupen todo el ancho */
+        margin: 5px 0; /* Espaciado vertical entre botones */
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .navbar button {
+        width: 68%;
+        font-size: 12px; /* Tamaño de fuente menor para pantallas más pequeñas */
+        padding: 6px 12px;
+        word-wrap: break-word;
+        white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+    }
+    .navbar a, img{
+        margin-left: 2px;
+    }
+  }
+
+
