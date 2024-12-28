@@ -28,9 +28,16 @@ video.addEventListener('pause', () => {
             video.currentTime = Math.min(video.duration, video.currentTime + 10);
         }
 
-        function makeBig() {
-            video.style.width = '150%';
-            video.style.margin = '0';
+        function makeBig(){
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Para Firefox
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { // Para Chrome, Safari y Opera
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // Para Internet Explorer/Edge
+                video.msRequestFullscreen();
+            }
         }
 
         function makeSmall() {

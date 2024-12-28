@@ -99,7 +99,7 @@ body {
 .message {
     margin: 0;
     font-weight: 600;
-    color: blue;
+    color: white;
     padding: 0px;
 }
 
@@ -314,6 +314,11 @@ body {
     50%{background-image: url('/static/images/Poster Justice League slider.jpg');}
     75%{background-image: url('/static/images/Poster Avengers slider.jpg');}
     100%{background-image: url('/static/images/Poster Matrix Resurrections slider.jpg');}
+}
+
+.flash-message {
+    text-align: center;
+    color:white;
 }
 
 footer p {

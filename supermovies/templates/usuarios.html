@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../static/images/icon G2.png" sizes="192x192" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <div class="container">
+        <h2>Usuarios</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Bloqueo</th>
+                <th>Acciones</th>
+            </tr>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario[0] }}</td>
+                <td>{{ usuario[2] }}</td>
+                <td>{{ usuario[3] }}</td>
+                <td>{{ usuario[4] }}</td>
+                <td>{{ usuario[5] }}</td>
+                <td>{{ 'Bloqueado' if usuario[6] else 'Activo' }}</td>
+                <td>
+                    <a href="{{ url_for('bloquear', id=usuario[0]) }}">Bloquear/Desbloquear</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <script src="../static/javascripts/site.js"></script>
+    {% endblock %}
+</body>
+</html>
