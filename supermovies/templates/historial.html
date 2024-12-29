@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Historial de Actividades</h2>
+    {% extends "layout_admin.html" %}
+    {% block content %}
+    <div class="container-table" style="overflow-x: auto;">
+        <h3>Historial de Actividades</h3>
         <table>
             <tr>
                 <th>ID</th>
@@ -28,5 +30,6 @@
             {% endfor %}
         </table>
     </div>
+    {% endblock %}
 </body>
 </html>

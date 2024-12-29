@@ -9,28 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    {% extends "layout.html" %}
+    {% extends "layout_admin.html" %}
     {% block content %}
-    <div class="container">
-        <h2>Usuarios</h2>
+    <div class="container-table" style="overflow-x: auto;">
+        <h3>Usuarios</h3>
         <table>
             <tr>
                 <th>ID</th>
                 <th>Usuario</th>
                 <th>Nombre</th>
+                <th>Apellido</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th>Bloqueo</th>
+                <th>Estado</th>
                 <th>Acciones</th>
             </tr>
             {% for usuario in usuarios %}
             <tr>
                 <td>{{ usuario[0] }}</td>
                 <td>{{ usuario[2] }}</td>
-                <td>{{ usuario[3] }}</td>
                 <td>{{ usuario[4] }}</td>
                 <td>{{ usuario[5] }}</td>
-                <td>{{ 'Bloqueado' if usuario[6] else 'Activo' }}</td>
+                <td>{{ usuario[6] }}</td>
+                <td>{{ usuario[7] }}</td>
+                <td>{{ 'Bloqueado' if usuario[8] else 'Activo' }}</td>
                 <td>
                     <a href="{{ url_for('bloquear', id=usuario[0]) }}">Bloquear/Desbloquear</a>
                 </td>
@@ -38,6 +40,18 @@
             {% endfor %}
         </table>
     </div>
+    <div class="flash-message">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    </div>
+
     <script src="../static/javascripts/site.js"></script>
     {% endblock %}
 </body>

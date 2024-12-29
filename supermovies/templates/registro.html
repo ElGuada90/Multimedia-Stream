@@ -18,28 +18,27 @@
             <h2>REGISTRO</h2>
             <form method="POST" action="/registro">
                 <div class="user-box">
-                    <input type="text" name="usuario" required>
+                    <input type="text" name="Usuario" required>
                     <label>Usuario</label>
                 </div>
                 <div class="user-box">
-                    <input type="password" name="contraseña" required>
+                    <input type="password" name="Contraseña" id="password-field" required>
                     <label>Contraseña</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="Nombre" required>
                     <label>Nombre</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" name="apellido" required>
+                    <input type="text" name="Apellido" required>
                     <label>Apellido</label>
                 </div>
                 <div class="user-box">
-                    <input type="email" name="email" required>
+                    <input type="email" name="Email" required>
                     <label>Email</label>
                 </div>
-                <div class="user-box">
-                    <input type="text" name="role" required>
-                    <label>Rol</label>
+                <div class="checkbox">
+                    <label><input type="checkbox" id="show-password">Mostrar Contraseña</label>
                 </div>
                 <button type="submit">Registrar</button>
             </form>
