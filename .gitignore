@@ -1,4 +1,7 @@
 # created by virtualenv automatically
+# archivos ingnorados
+views.py
+
 *stream
 *images
 *friends
@@ -9,5 +12,9 @@
 *comedias
 *ficcion
 *suspenso
+
+# Controller
+*views.py
+
 
 
