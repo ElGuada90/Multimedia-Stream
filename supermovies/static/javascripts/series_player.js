@@ -50,7 +50,7 @@ video.addEventListener('pause', () => {
             video.style.margin = '0';
         }
 
-
+    
         const headers = document.querySelectorAll('.accordion-header');
 
         headers.forEach(header => {
@@ -61,3 +61,4 @@ video.addEventListener('pause', () => {
                 content.style.display = content.style.display === "block" ? "none" : "block";
             });
         });
+

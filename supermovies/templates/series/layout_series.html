@@ -20,8 +20,28 @@
         <a href="{{ url_for('series') }}" class="navbar-item">Series</a>
         <a href="{{ url_for('peliculas') }}" class="navbar-item">Peliculas</a>
         <button id="installButton" type="button" style="display: none;">Instalar App</button>
-        <div class="navbar-right">{{ content }}</div>
+        <div class="navbar-right">
+            <div class="search-container">
+                <form method="GET" action="{{ url_for('buscar') }}" class="d-flex align-items-center">
+                    <input type="text" name="q" class="form-control me-2" placeholder="Buscar" required>
+                    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+                </form>
+            </div>
+       </div>
     </div>
+
+    <!-- Mostrar mensajes Flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages" id="flash-messages">
+            <ul>
+                {% for category, message in messages %}
+                    <li class="flash-{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% endwith %}
 
     <div class="body-content">
         {% block content %}

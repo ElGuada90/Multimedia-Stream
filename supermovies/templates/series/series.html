@@ -11,6 +11,18 @@
 <body>
     {% extends "series/layout_series.html" %}
     {% block content %}
+    <!-- Mostrar mensajes Flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages" id="flash-messages">
+            <ul>
+                {% for category, message in messages %}
+                    <li class="flash-{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% endwith %}
     <div class="background-image"></div>
     <div class="container">
         <div class="row">
@@ -42,13 +54,13 @@
                 <a href="{{ url_for('ladpt1c1') }}" aria-label="series"> <img src="../static/images/posterseries/Series El Señor de los Anillos - Los Anillos de Poder EE.jpg" alt="" class="img.fluid"> </a>
             </div>
             <div class="col-lg-3">
-                <img src="../static/images/posterseries/Series la Casa del Dragon.jpg" alt="" class="img.fluid">
+                <a href="{{ url_for('dragonhouset1c1') }}" aria-label="series"> <img src="../static/images/posterseries/Series la Casa del Dragon.jpg" alt="" class="img.fluid"> </a>
             </div>
             <div class="col-lg-3">
-                <img src="../static/images/posterseries/Series Game of Thrones.jpg" alt="" class="img.fluid">
+                <a href="#" aria-label="series"><img src="../static/images/posterseries/Series Game of Thrones.jpg" alt="" class="img.fluid"></a>
             </div>
             <div class="col-lg-3">
-                <img src="../static/images/posterseries/Series Vikingos.jpg" alt="" class="img.fluid">
+                <a href="#" aria-label="series"><img src="../static/images/posterseries/Series Vikingos.jpg" alt="" class="img.fluid"></a>
             </div>
         </div>
     </div>

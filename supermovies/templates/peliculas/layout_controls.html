@@ -20,7 +20,14 @@
         <a href="{{ url_for('series') }}" class="navbar-item">Series</a>
         <a href="{{ url_for('peliculas') }}" class="navbar-item">Peliculas</a>
         <button id="installButton" type="button" style="display: none;">Instalar App</button>
-        <div class="navbar-right">{{ content }}</div>
+        <div class="navbar-right">
+            <div class="search-container">
+                <form method="GET" action="{{ url_for('buscar') }}" class="d-flex align-items-center">
+                    <input type="text" name="q" class="form-control me-2" placeholder="Buscar" required>
+                    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+                </form>
+            </div>
+       </div>
     </div>
 
     <div class="body-content">

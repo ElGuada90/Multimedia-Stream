@@ -22,6 +22,17 @@
         <button id="installButton" type="button" style="display: none;">Instalar App</button>
         <div class="navbar-right">{{ content }}</div>
     </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages" id="flash-messages">
+            <ul>
+                {% for category, message in messages %}
+                    <li class="flash-{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% endwith %}
 
     <div class="body-content">
         {% block content %}
