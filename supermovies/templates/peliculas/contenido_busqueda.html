@@ -9,31 +9,19 @@
 
 </head>
 <body>
-    {% extends "series/layout_series.html" %}
+    {% extends "peliculas/layout_peliculas.html" %}
     {% block content %}
-    <!-- Mostrar mensajes Flash -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <div class="flash-messages" id="flash-messages">
-            <ul>
-                {% for category, message in messages %}
-                    <li class="flash-{{ category }}">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-    {% endwith %}
     <div class="background-image"></div>
     <div class="contenedor">
         {% if results %}
         <div class="row">
-            {% for contenido in results %}
+            {% for pelicula in results %}
             <div class="col-lg col-md col-sm movie-card">
-                <a href="{{ url_for(contenido['Enlace']) }}" aria-label="{{ contenido['Titulo'] }}">
-                    <img src="{{ contenido['Imagen'] }}" alt="{{ contenido['Titulo'] }}">
+                <a href="{{ url_for(pelicula['Enlace']) }}" aria-label="{{ pelicula['Titulo'] }}">
+                    <img src="{{ pelicula['Imagen'] }}" alt="{{ pelicula['Titulo'] }}">
                 </a>
-                <div class="movie-title">{{ contenido['Titulo'] }}</div>
-                <div class="movie-genre">{{ contenido['Genero'] }}</div>
+                <div class="movie-title">{{ pelicula['Titulo'] }}</div>
+                <div class="movie-genre">{{ pelicula['Genero'] }}</div>
             </div>
             {% endfor %}
         </div>

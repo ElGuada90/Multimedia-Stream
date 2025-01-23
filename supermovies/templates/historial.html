@@ -15,17 +15,17 @@
         <h3>Historial de Actividades</h3>
         <table>
             <tr>
-                <th>ID</th>
-                <th>Usuario ID</th>
+                <th>ID_Usuario</th>
+                <th>ID_Contenido</th>
                 <th>Acción</th>
                 <th>Fecha</th>
             </tr>
             {% for evento in historial %}
             <tr>
-                <td>{{ evento[0] }}</td>
                 <td>{{ evento[1] }}</td>
                 <td>{{ evento[2] }}</td>
                 <td>{{ evento[3] }}</td>
+                <td>{{ evento[4] }}</td>
             </tr>
             {% endfor %}
         </table>

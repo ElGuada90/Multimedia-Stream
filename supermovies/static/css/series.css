@@ -229,12 +229,67 @@ a {
 }
 
 .contenedor{
+    background-color: rgba(3,3,3,0.35);
+    width: 100%;
+    height: auto;
+    display: flex;
     margin-top: 75px;
+    border-radius: 10px;
     color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+.flash-message {
+    text-align: center;
+    color:white;
+}
+
+.movie-card {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.movie-card img {
+    width: 300px;
+    height: 450px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.movie-card img:hover {
+    transform: scale(1.05);
+}
+.movie-title {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.movie-genre {
+    color: gray;
+    font-size: 0.9rem;
+}
+
+table img {
+    border-radius: 10px;
+}
+
 th, td {
     color: white;
+    align-items: center;
+    vertical-align: middle; /* Alineación vertical */
+    padding: 10px; /* Espaciado interno para una mejor presentación */
 }
+
+td img {
+    display: block; /* Evita espacios adicionales alrededor de la imagen */
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+    max-width: 100px; /* Tamaño máximo de ancho */
+    height: auto; /* Ajusta proporcionalmente la altura */
+}
+
+.thdata { text-align: center;}
 
 footer p {
     color: rgba(255, 255, 255, 1);

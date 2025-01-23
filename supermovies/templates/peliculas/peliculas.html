@@ -12,69 +12,22 @@
     {% extends "peliculas/layout_peliculas.html" %}
     {% block content %}
     <div class="background-image"></div>
-    <div class="container">
+    <div class="contenedor">
+        {% if results %}
         <div class="row">
-            <div class="col-lg-3">
-                <a href="{{ url_for('todascontrajohn') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Todas contra John.jpg" alt="" class="img.fluid"></a>
+            {% for contenido in results %}
+            <div class="col-lg col-md col-sm movie-card">
+                <a href="{{ url_for(contenido['Enlace']) }}" aria-label="{{ contenido['Titulo'] }}">
+                    <img src="{{ contenido['Imagen'] }}" alt="{{ contenido['Titulo'] }}">
+                </a>
+                <div class="movie-title">{{ contenido['Titulo'] }}</div>
+                <div class="movie-genre">{{ contenido['Genero'] }}</div>
             </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('thehotchick') }}" aria-label="movies"><img src="../static/images/posterpeliculas/The Hot Chick.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('whitechicks') }}" aria-label="movies"><img src="../static/images/posterpeliculas/white Chicks.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('americanpie4') }}" aria-label="movies"> <img src="../static/images/posterpeliculas/American Pie 4.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('meangirls') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Mean Girls.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('seventeenagain') }}" aria-label="movies"><img src="../static/images/posterpeliculas/17 Otra Vez.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('reciencasados') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Just Married.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('fiftyfirstdates') }}" aria-label="movies"><img src="../static/images/posterpeliculas/50 First Dates.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('eldiablovistealamoda') }}" aria-label="movies"><img src="../static/images/posterpeliculas/El Diablo Viste a la Moda.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('parpadeadosveces') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Parpadea dos veces.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('mile8') }}" aria-label="movies"><img src="../static/images/posterpeliculas/8 Mile.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('enbuscadefelicidad') }}" aria-label="movies"><img src="../static/images/posterpeliculas/En busca de la Felicidad.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('apruebadefuego') }}" aria-label="movies"><img src="../static/images/posterpeliculas/A prueba de fuego.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('elpadrino1') }}" aria-label="movies"><img src="../static/images/posterpeliculas/El Padrino 1.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('matrix') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Matrix.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('matrixrecargado') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Matrix Recargado.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('terminator2') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Terminator 2.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('terminator4') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Terminator 4.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('terminator6') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Terminator 6.jpg" alt="" class="img.fluid"></a>
-            </div>
-            <div class="col-lg-3">
-                <a href="{{ url_for('dejavu') }}" aria-label="movies"><img src="../static/images/posterpeliculas/Dejavu.jpg" alt="" class="img.fluid"></a>
-            </div>
+            {% endfor %}
         </div>
+        {% else %}
+        <p class="mt-4 flash-message">No se encontraron resultados para "{{ query }}".</p>
+        {% endif %}
     </div>
     {% endblock %}
 </body>
