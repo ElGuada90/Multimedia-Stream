@@ -114,6 +114,14 @@ body {
     font-family: "Audiowide", sans-serif;
 }
 
+.container-text { 
+    text-align: center;
+    color: white;
+    margin-top: 15px;
+
+}
+
+
 /* Estilos para asegurar que el contenido no se superponga */
 .container {
     background-color: rgba(3,3,3,0.35);
@@ -124,6 +132,8 @@ body {
     align-items: center;
     margin-top: 75px;
     border-radius: 10px;
+    color: white;
+    text-align: center;
 }
 
 .container img {
@@ -185,12 +195,18 @@ button:hover {
     background-color: #0056b3;
 }
 
+
+.accordion-button {
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white;
+}
+
 .accordion {
     background-color:transparent;
     border: transparent;
     border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 25px;
+    margin-bottom: 5px;
+   
 }
 
 .accordion-item {
@@ -201,9 +217,9 @@ button:hover {
 
 .accordion-header {
     cursor: pointer;
-    padding: 15px;
+    padding: 5px;
     text-align: left;
-    background-color: #007BFF;
+    background-color: transparent;
     color: white;
     border: none;
     width: 100%;
@@ -212,7 +228,7 @@ button:hover {
 }
 
 .accordion-header:hover {
-    background-color: #0056b3;
+    background-color: transparent ;
 }
 
 .accordion-content {
@@ -220,12 +236,30 @@ button:hover {
     display: none; /* Oculta el contenido por defecto */
     color: white;
     background-color:transparent;
+    text-decoration: none;
+}
+
+.accordion-body ul {
+    list-style-type: none; /* Quitar las viñetas */
+    padding-left: 0; /* Quitar el padding extra de la lista */
+}
+
+h2 {
+    margin-top: 25px;
+    padding: 20px;
 }
 
 a {
     color:white;
     text-decoration: none;
     font-size: 14px;
+}
+
+
+.accordion .btn-link.active {
+    font-weight: bold;
+    color: #007bff;
+    border-radius: 10px;
 }
 
 .contenedor{
@@ -240,6 +274,69 @@ a {
     align-items: center;
     text-align: center;
 }
+
+/* Contenedor principal de mensajes flash */
+.flash-messages {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 450px;
+    z-index: 1000;
+    text-align: center;
+    animation: fadeOut 10s forwards; /* Aplica la animación */
+  }
+  
+  /* Lista de mensajes */
+  .flash-messages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Mensajes individuales */
+  .flash-messages li {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Categorías de mensajes */
+  .flash-success {
+    background-color: #28a745;
+  }
+  
+  .flash-error {
+    background-color: #dc3545;
+  }
+  
+  .flash-warning {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .flash-info {
+    background-color: #17a2b8;
+  }
+  
+  /* Animación para desaparecer */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 
 .flash-message {
     text-align: center;

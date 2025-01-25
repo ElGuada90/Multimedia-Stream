@@ -17,8 +17,8 @@
         <a href="{{ url_for('home') }}" class="navbar-brand" aria-label="Brand">
             <img src="static/images/icon G2.png" class="navbar-logo" alt="">
         </a>
-        <a href="{{ url_for('series_estrenos') }}" class="navbar-item">Series</a>
-        <a href="{{ url_for('estrenos') }}" class="navbar-item">Peliculas</a>
+        <a href="{{ url_for('series_contenido') }}" class="navbar-item">Series</a>
+        <a href="{{ url_for('peliculas_contenido') }}" class="navbar-item">Peliculas</a>
         <button id="installButton" type="button" style="display: none;">Instalar App</button>
         <div class="navbar-right">
             <div class="search-container">
@@ -29,6 +29,17 @@
             </div>
        </div>
     </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages" id="flash-messages">
+            <ul>
+                {% for category, message in messages %}
+                    <li class="flash-{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% endwith %}
 
     <div class="body-content">
         {% block content %}

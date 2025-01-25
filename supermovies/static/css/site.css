@@ -106,7 +106,7 @@ body {
     max-width: 450px;
     z-index: 1000;
     text-align: center;
-    animation: fadeOut 8s forwards; /* Aplica la animación */
+    animation: fadeOut 10s forwards; /* Aplica la animación */
   }
   
   /* Lista de mensajes */
