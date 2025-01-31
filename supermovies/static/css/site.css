@@ -55,6 +55,10 @@ body {
     font-weight: 600;
 }
 
+.navbar a:hover {
+    color:#03e9fa;
+}
+
 .navbar img {
     display: block;
     width: 50px;
@@ -482,6 +486,7 @@ footer p {
     .navbar a, img{
         margin-left: 2px;
     }
+
   }
 
 

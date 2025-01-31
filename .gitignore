@@ -8,6 +8,8 @@ views.py
 *dragonhouse
 *ladp
 *mandalorian
+*obiwankenobi
+*skeletoncrew
 *smallville
 *tahm
 *accion
@@ -15,6 +17,9 @@ views.py
 *Drama
 *ficcion
 *suspenso
+
+/animes
+*animes
 
 # Controller
 *views.py

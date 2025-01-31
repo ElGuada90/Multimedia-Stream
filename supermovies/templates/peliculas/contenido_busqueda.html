@@ -17,7 +17,7 @@
         <div class="row">
             {% for pelicula in results %}
             <div class="col-lg col-md col-sm movie-card">
-                <a href="{{ url_for(pelicula['Enlace']) }}" aria-label="{{ pelicula['Titulo'] }}">
+                <a href="{{ url_for(pelicula['Enlace'], id_episodio=pelicula.get('id_episodio', 0)) }}" aria-label="series">
                     <img src="{{ pelicula['Imagen'] }}" alt="{{ pelicula['Titulo'] }}">
                 </a>
                 <div class="movie-title">{{ pelicula['Titulo'] }}</div>
