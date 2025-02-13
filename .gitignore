@@ -2,21 +2,16 @@
 # archivos ingnorados
 views.py
 
+# Carpetas ignoradas
+/stream # multimedia
 *stream
 *images
-*friends
-*dragonhouse
-*ladp
-*mandalorian
-*obiwankenobi
-*skeletoncrew
-*smallville
-*tahm
-*accion
-*comedias
-*Drama
-*ficcion
-*suspenso
+
+/series
+*series
+
+/peliculas
+*peliculas
 
 /animes
 *animes

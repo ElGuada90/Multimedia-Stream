@@ -3,17 +3,17 @@
 <head>
     <title>{{title}}</title>
     <meta charset="UTF-8">
-    <link rel="icon" href="../static/images/icon G2.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='images/icon G2.png') }}" sizes="192x192" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="manifest" href="../static/manifest.json">
-    <link rel="stylesheet" href="../static/css/series.css">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/series.css') }}">
 </head>
 <body>
     <div class="navbar">
         <a href="/" class="navbar-brand" aria-label="Brand">
-            <img src="../static/images/icon G2.png" class="navbar-logo" alt="">
+            <img src="{{ url_for('static', filename='images/icon G2.png') }}" class="navbar-logo" alt="">
         </a>
         <a href="{{ url_for('animes_contenido') }}" class="navbar-item">Animes</a>
         <a href="{{ url_for('series_contenido') }}" class="navbar-item">Series</a>
@@ -61,7 +61,8 @@
                             <ul>
                                 {% for episodio in episodios %}
                                 <li>
-                                    <a href="{{ episodio['Episodio'] }}"> <strong>Episodio {{ episodio['Episodio'] }} </strong> {{ episodio['titulo'] }}</a>
+                                    <a href="{{ url_for(serie + '_episodios', temporada=temporada, id_episodio=episodio['Episodio']) }}"> 
+                                    <strong>Episodio {{ episodio['Episodio'] }} </strong> {{ episodio['titulo'] }}</a>
                                     
                                 </li>
                                 {% endfor %}
@@ -81,7 +82,7 @@
             <p>Copyright &copy; EG90 2024</p>
         </footer>
     </div>
-    <script src="../static/javascripts/series_player.js" defer></script>
+    <script src="{{ url_for('static', filename='javascripts/series_player.js') }}" defer></script>
 
 </body>
 </html>

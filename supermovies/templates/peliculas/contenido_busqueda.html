@@ -15,13 +15,13 @@
     <div class="contenedor">
         {% if results %}
         <div class="row">
-            {% for pelicula in results %}
+            {% for contenido in results %}
             <div class="col-lg col-md col-sm movie-card">
-                <a href="{{ url_for(pelicula['Enlace'], id_episodio=pelicula.get('id_episodio', 0)) }}" aria-label="series">
-                    <img src="{{ pelicula['Imagen'] }}" alt="{{ pelicula['Titulo'] }}">
+                <a href="{{ url_for(contenido['Enlace'], id_episodio=contenido.get('id_episodio', 1), temporada=contenido.get('temporada', 1)) }}" aria-label="series">
+                    <img src="{{ contenido['Imagen'] }}" alt="{{ contenido['Titulo'] }}">
                 </a>
-                <div class="movie-title">{{ pelicula['Titulo'] }}</div>
-                <div class="movie-genre">{{ pelicula['Genero'] }}</div>
+                <div class="movie-title">{{ contenido['Titulo'] }}</div>
+                <div class="movie-genre">{{ contenido['Genero'] }}</div>
             </div>
             {% endfor %}
         </div>

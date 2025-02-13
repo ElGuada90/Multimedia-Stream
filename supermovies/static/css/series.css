@@ -200,9 +200,18 @@ button:hover {
 }
 
 
-.accordion-button {
-    background-color: #007BFF; /* Color de fondo del botón */
+.container-acordion{
+    background-color: rgba(3,3,3,0.35);
+    width: 100%;
+    
+    display: flex;
+    margin-top: 10px;
+    border-radius: 10px;
     color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
 }
 
 .accordion {
@@ -211,6 +220,12 @@ button:hover {
     border-radius: 5px;
     margin-bottom: 5px;
    
+}
+
+.accordion-button {
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white;
+    border-radius: 10px;
 }
 
 .accordion-item {
