@@ -100,6 +100,7 @@ body {
     color: white;
 }
 
+
 /* Contenedor principal de mensajes flash */
 .flash-messages {
     position: fixed;

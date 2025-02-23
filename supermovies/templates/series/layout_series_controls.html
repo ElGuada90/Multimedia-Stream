@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/series.css') }}">
 </head>
@@ -23,7 +24,9 @@
             <div class="search-container">
                 <form method="GET" action="{{ url_for('buscar') }}" class="d-flex align-items-center">
                     <input type="text" name="q" class="form-control me-2" placeholder="Buscar" required>
-                    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+                    <button type="submit" class="btn btn-primary mt-2">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </form>
             </div>
        </div>

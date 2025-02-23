@@ -1,5 +1,5 @@
 import os
-from supermovies import app    # Imports the code from HelloFlask/__init__.py
+from supermovies import app   
 
 if __name__ == '__main__':
     HOST = os.environ.get('SERVER_HOST', 'localhost')
