@@ -3,7 +3,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    background-color: transparent;
 }
 
 .background-image {
@@ -25,6 +25,60 @@ body {
     object-fit: cover;
 }
 
+/* styles.css para el dropdown botón y menú */
+.dropdown-toggle::after {
+    float: right; /* Mueve la flecha a la derecha */
+    margin-top: 0.5em; /* Ajusta el margen vertical de la flecha */
+
+}
+
+.dropdown-toggle {
+    display: flex; /* Habilita flexbox para alinear el contenido */
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente el contenido */
+    width: 50px;
+    height: 50px;
+    background-color: transparent !important;
+}
+
+.dropdown .btn.btn-secondary.dropdown-toggle {
+    border: none;
+    box-shadow: none;
+}
+
+.dropdown .btn.btn-secondary.dropdown-toggle:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.navbar-logo {
+    margin-right: 0.2em; /* Agrega espacio entre el logo y la flecha */
+}
+
+.dropdown-menu {
+    z-index: 1000;
+    background-color: rgba(5, 5, 88, 1) !important;
+    border: 2px solid blue;
+    width: 100% !important;
+    color: white;
+    
+}
+
+.dropdown-item {
+    padding-left: 16px;
+    font-size: 12px !important;
+}
+
+.dropdown-item:hover{
+   color:  rgba(5, 5, 88, 1) !important;
+}
+
+
+.navbar .dropdown:hover .dropdown-menu,
+.navbar .dropdown .dropdown-menu.show { /* Mostrar al pasar el ratón o al hacer clic */
+    display: block;
+}
+
 
 .navbar {
     position: fixed;
@@ -35,10 +89,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background-color: rgba(3,3,3,0.35);
+    background-color: rgba(5, 5, 88, 1);
     font-family: "Audiowide", sans-serif;
     color: white;
-    overflow: hidden;
+    /*overflow: hidden;*/
     padding: 8px 5px 8px 5px;
     font-size: 15px;
     
@@ -73,7 +127,7 @@ body {
 
 .navbar-item {
     font-variant: small-caps;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .navbar-right {
@@ -86,6 +140,17 @@ body {
    
 }
 
+.navbar-right button {
+    background-color: rgba(3, 233, 250); /* Color verde */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 50px;
+   
+}
+
 .navbar button {
     background-color: rgba(3, 233, 250); /* Color verde */
     color: black;
@@ -95,6 +160,7 @@ body {
     border-radius: 10px;
     word-wrap: break-word;
 }
+
 .navbar button:hover {
     background-color: #45a049; /* Color más oscuro al pasar el ratón */
     color: white;
@@ -155,8 +221,8 @@ body {
     0% {
       opacity: 1;
     }
-    90% {
-      opacity: 0;
+    95% {
+      opacity: 0.85;
     }
     100% {
       opacity: 0;
@@ -180,23 +246,33 @@ body {
 
 
 
-/* Estilos para asegurar que el contenido no se superponga */
+/* Estilos para formularios de Login y Registro */
 .container {
-    width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
 }
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100%;
+  }
 
 .login-box {
     width: 400px;
     padding: 40px;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: transparent;
     border-radius: 25px;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba (0, 0, 0, 1);
     text-align: center;
+    font-family: "Audiowide", sans-serif;
+}
+
+.login-box img {
+    width: 100px;
 }
 
 .login-box h2 {
@@ -256,9 +332,11 @@ body {
 }
 
 .login-box button[type="submit"] {
-    padding: 5px;
+    padding: 10px 20px;
     border-radius: 10px;
     margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 .login-box form a {
@@ -437,7 +515,7 @@ footer p {
 }
 
 /* Para pantallas pequeñas */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .navbar {
         display: flex;
         justify-content: flex-start;
@@ -467,7 +545,7 @@ footer p {
 }
 
 /* Estilos específicos para pantallas más pequeñas */
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .navbar button {
         font-size: 14px; /* Ajusta el tamaño de la fuente */
         padding: 8px 16px; /* Ajusta el relleno */
@@ -476,7 +554,7 @@ footer p {
     }
   }
   
-  @media (max-width: 400px) {
+  @media only screen and (max-width: 400px) {
     .navbar button {
         width: 68%;
         font-size: 12px; /* Tamaño de fuente menor para pantallas más pequeñas */
@@ -486,6 +564,10 @@ footer p {
     }
     .navbar a, img{
         margin-left: 2px;
+    }
+
+    .navbar-item {
+        display: none; /* Oculta los enlaces */
     }
 
   }

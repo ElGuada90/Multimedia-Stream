@@ -15,3 +15,26 @@ document.getElementById('submit-btn').addEventListener('click', function(e) {
     // Enviar el formulario
     document.getElementById('login-form').submit();
 });
+
+/// FORMULARIO OFFCANVAS
+/////////////////////////////////////////////////////////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function() {
+    const filasUsuario = document.querySelectorAll('.fila-usuario');
+    filasUsuario.forEach(fila => {
+        fila.addEventListener('click', function() {
+            const idUsuario = this.getAttribute('data-usuario-id');
+            const usuario = this.querySelectorAll('td');
+
+            document.getElementById('id_usuario').value = idUsuario;
+            document.getElementById('usuario').value = usuario[1].textContent;
+            document.getElementById('nombre').value = usuario[2].textContent;
+            document.getElementById('apellido').value = usuario[3].textContent;
+            document.getElementById('email').value = usuario[4].textContent;
+            document.getElementById('rol').value = usuario[5].textContent;
+            document.getElementById('estado').value = usuario[6].textContent === 'Activo' ? '1' : '0';
+
+            const offcanvasEditar = new bootstrap.Offcanvas(document.getElementById('offcanvasEditarUsuario'));
+            offcanvasEditar.show();
+        });
+    });
+});

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../static/images/icon G2.png" sizes="192x192" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    {% extends "layout_admin.html" %}
+    {% block content %}
+    <div class="container-dashboard">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center mb-4">Dashboard de Contenido</h1>
+            </div>
+            <div class="col-lg-12">
+                <h2 class="text-center">Contenido por Tipo</h2>
+                {{ grafico_plotly_tipos | safe }}
+            </div>
+            <div class="col-lg-12">
+                <h2 class="text-center">Contenido por Género</h2>
+                {{ grafico_plotly_generos | safe }}
+            </div>
+            <div class="col-lg-12">
+                <h2 class="text-center">Contenido Visto por Usuario</h2>
+                {{ grafico_plotly_usuarios | safe }}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

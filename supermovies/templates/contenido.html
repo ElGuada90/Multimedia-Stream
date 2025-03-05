@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../static/images/icon G2.png" sizes="192x192" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    {% extends "layout_admin.html" %}
+    {% block content %}
+    <div class="container-contenido">
+        <div class="row">
+            <h1>Dashboard de Contenido</h1>
+            <div class="col-md-4">
+                <h2>Contenido por Tipo</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for categoria, cantidad in datos_tipo %}
+                        <tr>
+                            <td>{{ categoria }}</td>
+                            <td>{{ cantidad }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Películas por Género</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Género</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for genero, cantidad in datos_genero %}
+                        <tr>
+                            <td>{{ genero }}</td>
+                            <td>{{ cantidad }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Contenido Visto por Usuario</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for usuario, cantidad in datos_usuario %}
+                        <tr>
+                            <td>{{ usuario }}</td>
+                            <td>{{ cantidad }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
