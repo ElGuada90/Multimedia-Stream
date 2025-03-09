@@ -37,10 +37,10 @@
         
         
         <div class="container controls">
-            <button onclick="rewind()" type="button">Rewind</button>
+            <button onclick="rewind()" type="button"><i class="fa-solid fa-backward"></i></button>
             <button onclick="playPause()" type="button">Play/Pause</button>
-            <button onclick="forward()" type="button">Forward</button>
-            <button onclick="makeBig()" type="button">BigScreen</button>
+            <button onclick="forward()" type="button"><i class="fa-solid fa-forward"></i></button>
+            <button onclick="makeBig()" type="button"><i class="fa-solid fa-expand"></i></button>
             {% if prev_url %}
             <a href="{{ prev_url }}" class="button-link">Previous</a>
             {% endif %}

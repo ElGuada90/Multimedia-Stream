@@ -1,6 +1,5 @@
 # created by virtualenv automatically
 # archivos ingnorados
-views.py
 
 # Carpetas ignoradas
 /stream # multimedia
@@ -15,9 +14,6 @@ views.py
 
 /animes
 *animes
-
-# Controller
-*views.py
 
 
 

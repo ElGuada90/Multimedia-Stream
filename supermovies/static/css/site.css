@@ -167,6 +167,23 @@ body {
 }
 
 
+/* Espaciado para crear un margen izquierdo */
+.dropdown-menu .dropdown-item {
+    padding-left: 1.5rem; /* Ajusta este valor según el margen deseado */
+    display: flex; /* Asegura que el icono y el texto se alineen correctamente */
+    align-items: center; /* Centra verticalmente el icono y el texto */
+}
+  
+.dropdown-menu .dropdown-item i {
+    margin-right: 0.5rem; /* Espacio entre el icono y el texto */
+}
+  
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f0f0f0; /* Ejemplo de color de fondo al hacer hover */
+    /* No necesitas ajustar el padding aquí, ya que ya lo definimos en el estado normal */
+}
+
+
 /* Contenedor principal de mensajes flash */
 .flash-messages {
     position: fixed;
@@ -244,6 +261,9 @@ body {
     font-family: "Audiowide", sans-serif;
 }
 
+.container-contenido {
+    margin-top: 20px;
+}
 
 
 /* Estilos para formularios de Login y Registro */
